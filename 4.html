@@ -4,51 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .image-container {
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            max-width: 300px;
+            height: 280px;
+            display: none;
+            border: 5px solid transparent;
+        }
+
+        .image-container img.active {
+            display: block;
+        }
+
+        .square {
+            border-radius: 0;
+            clip-path: none;
+        }
+
+        .round {
+            border-radius: 50%;
+            clip-path: none;
+        }
+
+        .triangle {
+            border-radius: 0;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        .blue {
+            border-color: blue;
+        }
+
+        .red {
+            border-color: red;
+        }
+
+        .green {
+            border-color: green;
+        }
+    </style>
 </head>
-<style>
-    .image-container {
-        margin-bottom: 20px;
-    }
-
-    .image-container img {
-        max-width: 300px;
-        height: 280px;
-        display: none;
-        border: 5px solid transparent;
-    }
-
-    .image-container img.active {
-        display: block;
-    }
-
-    .square {
-        border-radius: 0;
-        clip-path: none;
-    }
-
-    .round {
-        border-radius: 50%;
-        clip-path: none;
-    }
-
-    .triangle {
-        border-radius: 0;
-        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    }
-
-
-    .blue {
-        border-color: blue;
-    }
-
-    .red {
-        border-color: red;
-    }
-
-    .green {
-        border-color: green;
-    }
-</style>
 <body>
     <div class="image-container">
         <img id="image1" src="assets/svb.jpg" alt="gambar 1" class="active square">
@@ -59,7 +58,7 @@
     <label for="">Ubah</label>
 
     <div class="image-control">
-        <label for="">Pilih Gambar :</label>
+        <label for="imageSelector">Pilih Gambar :</label>
         <br>
         <select id="imageSelector">
             <option value="none">None</option>
@@ -70,7 +69,7 @@
     </div>
 
     <div class="image-shape-container">
-        <label for="">Pilih Bentuk :</label>
+        <label for="shapeSelector">Pilih Bentuk :</label>
         <br>
         <select id="shapeSelector">
             <option value="transparent">None</option>
@@ -81,18 +80,19 @@
     </div>
     
     <div class="image-color-container">
-        <label for="">Pilih Warna :</label>
+        <label for="colorSelector">Pilih Warna :</label>
         <br>
         <select id="colorSelector">
             <option value="transparent">None</option>
-            <option value="blue">Blue</option>
-            <option value="red">Red</option>
+            <option value="blue">Biru</option>
+            <option value="red">Merah</option>
             <option value="green">Hijau</option>
         </select>
     </div>
 </body>
 
 <script>
+    // Update image display based on selected image
     document.getElementById('imageSelector').addEventListener("change", function() {
         var images = document.querySelectorAll('.image-container img');
         images.forEach(function(image) {
@@ -104,6 +104,7 @@
         }
     });
 
+    // Update image shape based on selected shape
     document.getElementById('shapeSelector').addEventListener("change", function() {
         var images = document.querySelectorAll('.image-container img.active');
         images.forEach(function(image) {
@@ -114,6 +115,7 @@
         }.bind(this));
     });
 
+    // Update image border color based on selected color
     document.getElementById('colorSelector').addEventListener("change", function() {
         var images = document.querySelectorAll('.image-container img.active');
         images.forEach(function(image) {
