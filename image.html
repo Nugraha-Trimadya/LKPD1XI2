@@ -21,7 +21,6 @@
         display: block;
     }
 
-    /* Shape styles */
     .square {
         border-radius: 0;
         clip-path: none;
@@ -37,7 +36,7 @@
         clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     }
 
-    /* Color styles */
+
     .blue {
         border-color: blue;
     }
@@ -94,7 +93,6 @@
 </body>
 
 <script>
-    // Mengubah gambar yang dipilih
     document.getElementById('imageSelector').addEventListener("change", function() {
         var images = document.querySelectorAll('.image-container img');
         images.forEach(function(image) {
@@ -106,7 +104,6 @@
         }
     });
 
-    // Mengubah bentuk gambar
     document.getElementById('shapeSelector').addEventListener("change", function() {
         var images = document.querySelectorAll('.image-container img.active');
         images.forEach(function(image) {
@@ -114,10 +111,9 @@
             if (this.value !== "transparent") {
                 image.classList.add(this.value);
             }
-        }.bind(this)); // Bind this untuk mendapatkan nilai dari this di dalam loop
+        }.bind(this));
     });
 
-    // Mengubah warna border gambar
     document.getElementById('colorSelector').addEventListener("change", function() {
         var images = document.querySelectorAll('.image-container img.active');
         images.forEach(function(image) {
@@ -125,7 +121,7 @@
             if (this.value !== "transparent") {
                 image.classList.add(this.value);
             }
-        }.bind(this)); // Bind this untuk mendapatkan nilai dari this di dalam loop
+        }.bind(this));
     });
 </script>
 </html>
