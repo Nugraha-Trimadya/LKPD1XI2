@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th{
+            background-color: pink;
+        }
+        .jk{
+            background-color: pink;
+        }
+    </style>
+<table style="width: 50%;">
+    <tr>
+        <th rowspan="2">No</th>
+        <th rowspan="2">Nis</th>
+        <th rowspan="2">Nama</th>
+        <th rowspan="2">Rayon</th>
+        <th rowspan="2">JK</th>
+        <th colspan="2">Martikulasi</th>
+        <th rowspan="2">Tepat waktu</th>
+        <tr>
+        <th rowspan="2">Speed Test</th>
+        <th rowspan="2">LKPD php</th>
+        </tr>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>12410164</td>
+        <td>Allifo Rizki Ananda</td>
+        <td>Cib1</td>
+        <td class="jk">P</td>
+        <td><input type="checkbox"></td>
+ 
+    </tr>
+    <tr>
+            <td>2</td>
+            <td>12410179</td>
+            <td>Aisya Nalia Kirana</td>
+            <td>Wik 4</td>
+            <td class="jk">P</td>
+            <td>80</td>
+            <td>80</td>
+            <td><input type="checkbox"></td>
+
+    </tr>
+        <tr>
+            <td>3</td>
+            <td>12410185</td>
+            <td>Andhika Rafi</td>
+            <td>Cis 7</td>
+            <td class="jk">L</td>
+            <td>77</td>
+            <td>64</td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>12410195</td>
+            <td>Anya Khumaeni</td>
+            <td>Cic 10</td>
+            <td class="jk">L</td>
+            <td colspan="2" style="text-align: center;">PERLU PERBAIKAN</td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>12410272</td>
+            <td>Fadlan Septian Ramadhan</td>
+            <td>Taj 6</td>
+            <td class="jk">L</td>
+            <td>78</td>
+            <td>60</td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>12410286</td>
+            <td>Fariz Humam Munthasir</td>
+            <td>Cis 3</td>
+            <td class="jk">L</td>
+            <td colspan="2" style="text-align: center;">PERLU PERBAIKAN</td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <td colspan="5" style="text-align: end;">Rata-rata nilai</td>
+            <td>77.67</td>
+            <td>75.33</td>
+            <td class="jk"></td>
+        </tr>
+</table>
+</body>
+</html>
+<script>
+    document
+    .getElementById('imageSelector')
+    .addEventListener ("change" , function(){
+        var images = document.querySelectorAll('image-container img');
+        iamges.forEach(function(image){
+            image.classList.remove('active');
+        });
+        var selectedImage = document.getElementById(this.value);
+        selectedImage.classList.add('active');
+    })
+</script>

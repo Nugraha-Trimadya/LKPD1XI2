@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .image-container {
+        margin-bottom: 20px;
+    }
+
+    .image-container img {
+        max-width: 300px;
+        height: 280px;
+        display: none;
+        border: 5px solid transparent;
+    }
+
+    .image-container img.active {
+        display: block;
+    }
+
+    /* Shape styles */
+    .square {
+        border-radius: 0;
+        clip-path: none;
+    }
+
+    .round {
+        border-radius: 50%;
+        clip-path: none;
+    }
+
+    .triangle {
+        border-radius: 0;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+
+    /* Color styles */
+    .blue {
+        border-color: blue;
+    }
+
+    .red {
+        border-color: red;
+    }
+
+    .green {
+        border-color: green;
+    }
+</style>
+<body>
+    <div class="image-container">
+        <img id="image1" src="assets/svb.jpg" alt="gambar 1" class="active square">
+        <img id="image2" src="assets/filler.jpg" alt="gambar 2" class="square">
+        <img id="image3" src="assets/shaw.jpg" alt="gambar 3" class="square">
+    </div>
+
+    <label for="">Ubah</label>
+
+    <div class="image-control">
+        <label for="">Pilih Gambar :</label>
+        <br>
+        <select id="imageSelector">
+            <option value="none">None</option>
+            <option value="image1">Oli 1</option>
+            <option value="image2">Oli 2</option>
+            <option value="image3">Oli 3</option>
+        </select>
+    </div>
+
+    <div class="image-shape-container">
+        <label for="">Pilih Bentuk :</label>
+        <br>
+        <select id="shapeSelector">
+            <option value="transparent">None</option>
+            <option value="square">Kotak</option>
+            <option value="round">Bulet</option>
+            <option value="triangle">Segitiga</option>
+        </select>
+    </div>
+    
+    <div class="image-color-container">
+        <label for="">Pilih Warna :</label>
+        <br>
+        <select id="colorSelector">
+            <option value="transparent">None</option>
+            <option value="blue">Blue</option>
+            <option value="red">Red</option>
+            <option value="green">Hijau</option>
+        </select>
+    </div>
+</body>
+
+<script>
+    // Mengubah gambar yang dipilih
+    document.getElementById('imageSelector').addEventListener("change", function() {
+        var images = document.querySelectorAll('.image-container img');
+        images.forEach(function(image) {
+            image.classList.remove('active');
+        });
+        if (this.value !== "none") {
+            var selectedImage = document.getElementById(this.value);
+            selectedImage.classList.add('active');
+        }
+    });
+
+    // Mengubah bentuk gambar
+    document.getElementById('shapeSelector').addEventListener("change", function() {
+        var images = document.querySelectorAll('.image-container img.active');
+        images.forEach(function(image) {
+            image.classList.remove('square', 'round', 'triangle');
+            if (this.value !== "transparent") {
+                image.classList.add(this.value);
+            }
+        }.bind(this)); // Bind this untuk mendapatkan nilai dari this di dalam loop
+    });
+
+    // Mengubah warna border gambar
+    document.getElementById('colorSelector').addEventListener("change", function() {
+        var images = document.querySelectorAll('.image-container img.active');
+        images.forEach(function(image) {
+            image.classList.remove('blue', 'red', 'green');
+            if (this.value !== "transparent") {
+                image.classList.add(this.value);
+            }
+        }.bind(this)); // Bind this untuk mendapatkan nilai dari this di dalam loop
+    });
+</script>
+</html>
