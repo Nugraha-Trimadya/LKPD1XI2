@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #isi3{
+            display: none;
+        }#isi2{
+            display: none;
+        }#isi1{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div>
+            <label for="name">Jenjang pendidikan</label>
+            <select name="" id="opsi" onchange="changefunction(this)">
+            <option value="sd" >sd sederajat</option>
+            <option value="smp">smp sederajat</option>
+            <option value="sma">sma sederajat</option>
+        </select>
+        </div>
+        <div id="isi1">
+            <label for="name">Tingkat Sekolah</label>
+            <select name="" id="ubah-sd">
+            <option value="kelas1">Kelas 1</option>
+            <option value="kelas2">Kelas 2</option>
+            <option value="kelas3">Kelas 3</option>
+            <option value="kelas4">Kelas 4</option>
+            <option value="kelas5">Kelas 5</option>
+            <option value="kelas6">Kelas 6</option>
+        </select>
+        </div>
+        <div id="isi2">
+            <label for="name">Tingkat Sekolah</label>
+            <select name="" id="ubah-smp">
+            <option value="kelas1">Kelas 7</option>
+            <option value="kelas2">Kelas 8</option>
+            <option value="kelas3">Kelas 9</option>
+        </select>
+        </div>
+        <div id="isi3">
+            <label for="name">Tingkat Sekolah</label>
+            <select name="" id="ubah-sma">
+            <option value="kelas1">Kelas 10</option>
+            <option value="kelas2">Kelas 11</option>
+            <option value="kelas3">Kelas 12 </option>
+        </select>
+        </div>
+    </form>
+    <script>
+        function changefunction(e) {
+            var jenjang = e.value;
+            document.getElementById("isi1").style.display = "none";
+            document.getElementById("isi2").style.display = "none";
+            document.getElementById("isi3").style.display = "none";
+
+            if (jenjang == "sd") {
+                document.getElementById("isi1").style.display = "block";
+            } else if (jenjang == "smp") {
+                document.getElementById("isi2").style.display = "block";
+            } else if (jenjang == "sma") {
+                document.getElementById("isi3").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

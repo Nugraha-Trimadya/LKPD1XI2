@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: hotpink;
+        }
+        .row-start{
+            display: flex;
+            justify-content: flex-start;
+            background-color: antiquewhite;
+        }
+        .row-end{
+            display: flex;
+            justify-content: flex-end;
+            background-color: red;
+        }
+        .row{
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+         
+
+        }
+        .wrapper{
+            width: 40%;
+            display: block;
+            margin: auto;
+            flex: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="row-start">
+        <div class="card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, quod nostrum iste officiis repudiandae, saepe ea soluta tempore asperiores deleniti dicta vel, dolore magni reprehenderit doloribus facere. Dignissimos, incidunt alias.</p>
+        </div>
+    </div>
+    <div class="row-end">
+        <div class="card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, quod nostrum iste officiis repudiandae, saepe ea soluta tempore asperiores deleniti dicta vel, dolore magni reprehenderit doloribus facere. Dignissimos, incidunt alias.</p>
+        </div>
+    </div>
+    <div class="row-start">
+        <div class="card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, quod nostrum iste officiis repudiandae, saepe ea soluta tempore asperiores deleniti dicta vel, dolore magni reprehenderit doloribus facere. Dignissimos, incidunt alias.</p>
+        </div>
+    </div>
+        <div class="row">
+            <button>Woi</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="name">status ayah</label>
+        <input type="radio" id="hidup" name="isi" onclick="changeFuntion(this)" value="hidup">masih hidup
+        <input type="radio" id="mati" name="isi" onclick="changeFuntion(this)" value="mati">meninggal
+        <input type="radio" id="kosong" name="isi" onclick="changeFuntion(this)" value="kosong">tidak diketahui
+        <br>
+        <div id="canjust">
+            <label for="">pendidikan ayah</label>
+            <select name="" id="">
+                <option value="">stm</option>
+                <option value="">smk</option>
+                <option value="">sma</option>
+            </select>
+            <br>
+            <label for="">pekerjaan ayah</label>
+            <select name="" id="">
+                <option value="">kuli</option>
+                <option value="">pemain judi</option>
+                <option value="">pemain billiard</option>
+            </select>
+            <br>
+            <label for="name">deskripsi pekerjaan ayah</label>
+            <input type="text" id="" name="name">
+            <br>
+            <label for="name">total penhasilan ayah perbulan</label>
+            <input type="text" id="" name="name">
+            <br>
+            <label for="name"  id="hebat">detail ayah bekerja, berapa lama sudah bekerja, kondisi keseatan, dan kondisi karir profesinya</label>
+            <input type="text" id="" name="" >
+        </div>
+    </form>
+    <script>
+        function changeFuntion(e){
+            if(e.value == "hidup"){
+                document.getElementById('canjust').style.display= "block";
+                document.getElementById('hebat').innerText= "detail ayah bekerja, berapa lama sudah bekerja, kondisi keseatan, dan kondisi karir profesinya";
+
+            }else if(e.value == "mati"){
+                document.getElementById('canjust').style.display= "block";
+                document.getElementById('hebat').innerText= " berapa lama sudah bekerja semasa hidup";
+            }else{
+                document.getElementById('canjust').style.display="none";
+            }
+        }
+    </script>
+</body>
+</html>

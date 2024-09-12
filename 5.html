@@ -23,8 +23,9 @@
             font-size: 2rem;
             margin-bottom: 20px;
         }
-        .btn-group {
+        .btn-group:hover {
             margin-top: 10px;
+            transition: all ease-in 0.5s;
         }
     </style>
 </head>
@@ -61,7 +62,7 @@
                 } else {
                     updateTimerDisplay();
                 }
-            }, 790);
+            }, 1000);
         });
 
         document.getElementById('stopButton').addEventListener('click', function() {
